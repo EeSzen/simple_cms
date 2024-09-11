@@ -17,3 +17,10 @@ function connectToDB(){
 
     return $database;
 }
+
+// set error message
+function setError( $message , $redirect){
+    $_SESSION['error'] = $message;
+    // redirect user 
+    header("Location:" . $redirect);
+}

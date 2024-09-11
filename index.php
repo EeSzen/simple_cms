@@ -11,6 +11,7 @@ session_start();
 
     // once you figure out the path the user is visiting, load relevant content
     switch( $path ) {
+
     // actions
     case '/auth/do_login':
       require 'includes/auth/do_login.php';
@@ -18,6 +19,13 @@ session_start();
     case '/auth/do_signup':
       require 'includes/auth/do_signup.php';
       break;
+    case '/user/add':
+      require 'includes/user/add.php';
+      break;
+    case '/user/delete':
+    require 'includes/user/delete.php';
+    break;
+
     // pages
     case '/login':
       require 'pages/login.php';
@@ -55,6 +63,7 @@ session_start();
     case '/user_edit':
       require 'pages/user_edit.php';
       break;
+      
     default:
       require 'pages/home.php';
       break;

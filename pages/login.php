@@ -3,6 +3,8 @@
     <h1 class = "text-center pt-5 pb-3">Login</h1>
     <div class = "card w-50 d-flex justify-content-center align-items-center mx-auto">
         <div class = "w-75 py-4">
+            <?php require "parts/success.php"; ?>
+            <?php require "parts/error.php"; ?>
             <form action="/auth/do_login" method="POST">
             <div class="mb-3">
                 <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com"/>
@@ -30,3 +32,4 @@
      </div>
 </div>
 
+<?php require 'parts/footer.php';?>

@@ -2,6 +2,7 @@
 <div class ="container">
 <h1 class="text-center pt-5 pb-3">Sign Up a New Account</h1>
 <div class = "card w-50 d-flex justify-content-center align-items-center mx-auto">
+<?php require 'parts/error.php'; ?>
         <div class = "w-75 py-4">
             <form action="/auth/do_signup" method="POST">
             <div class="mb-3">

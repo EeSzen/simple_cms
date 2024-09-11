@@ -43,3 +43,4 @@ Curabitur sit amet nisl feugiat, efficitur nibh et, efficitur ex. Morbi nec frin
         >
       </div>
     </div>
+    <?php require 'parts/footer.php';?>
