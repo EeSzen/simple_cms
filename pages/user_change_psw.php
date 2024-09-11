@@ -1,11 +1,16 @@
+<?php
+  //get the id from the URL /manage-users.edit?id=1
+  $id = $_GET['id'];
+?>
 <?php require 'parts/header.php';?>
 <div class="container mx-auto my-5" style="max-width: 700px;">
       <div class="d-flex justify-content-between align-items-center mb-2">
         <h1 class="h1">Change Password</h1>
       </div>
       <div class="card mb-2 p-4">
-        <form>
+        <form method="POST" action="/user/change_psw">
           <div class="mb-3">
+          <?php require "parts/error.php"?>
             <div class="row">
               <div class="col">
                 <label for="password" class="form-label">Password</label>
@@ -23,6 +28,8 @@
               </div>
             </div>
           </div>
+          <input type="hidden" name="id" value="<?= $id; ?>"/>
+
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">
               Change Password

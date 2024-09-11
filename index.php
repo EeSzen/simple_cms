@@ -4,7 +4,8 @@ session_start();
 
     //figure out the url the user is visiting
     $path = $_SERVER["REQUEST_URI"];
-
+    // remove all the query strings(remove ? from edit)
+    $path = parse_url($path, PHP_URL_PATH);
 
     // import all the required files
     require "includes/function.php";
@@ -23,8 +24,14 @@ session_start();
       require 'includes/user/add.php';
       break;
     case '/user/delete':
-    require 'includes/user/delete.php';
-    break;
+      require 'includes/user/delete.php';
+      break;
+    case '/user/edit':
+      require 'includes/user/edit.php';
+      break;
+    case '/user/change_psw':
+      require 'includes/user/change_psw.php';
+      break;
 
     // pages
     case '/login':

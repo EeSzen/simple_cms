@@ -56,8 +56,15 @@ $database = connectToDB();
         </div>
     </div>
     <div class="mt-4 d-flex justify-content-center gap-2">
+    <?php if ( isset( $_SESSION['user'] ) ) : ?>
+        <!-- show dashboard and logout link if user is logged in -->
+        <a href="/dashboard" class="btn btn-primary btn-sm">Dashboard</a>
+        <a href="/logout" class="btn btn-primary btn-sm">Logout</a>
+    <?php else : ?>
+        <!-- show login and signup link if user is not logged in -->
         <a href="/login" class="btn btn-primary btn-sm">Login</a>
         <a href="/signup" class="btn btn-primary btn-sm">Sign Up</a>
+    <?php endif; ?>
     </div>
 </div>
    <!-- footer -->

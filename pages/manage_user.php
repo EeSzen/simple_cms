@@ -1,5 +1,12 @@
 <?php 
 
+
+  // check if user is logged in or not
+  checkIfuserIsNotLoggedIn();
+
+  // check if the user is admin or not
+  checkIfIsNotAdmin();
+
   // 1. connect to the database
   $database = connectToDB();
   
@@ -54,12 +61,12 @@
               <td class="text-end">
                 <div class="buttons">
                   <a
-                    href="/user_edit"
+                    href="/user_edit?id=<?= $user['id']; ?>"
                     class="btn btn-success btn-sm me-2"
                     ><i class="bi bi-pencil"></i
                   ></a>
                   <a
-                    href="/user-change_psw"
+                    href="/user_change_psw?id=<?= $user['id']; ?>"
                     class="btn btn-warning btn-sm me-2"
                     ><i class="bi bi-key"></i
                   ></a>
