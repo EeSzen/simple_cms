@@ -20,6 +20,7 @@ session_start();
     case '/auth/do_signup':
       require 'includes/auth/do_signup.php';
       break;
+    // user
     case '/user/add':
       require 'includes/user/add.php';
       break;
@@ -32,6 +33,17 @@ session_start();
     case '/user/change_psw':
       require 'includes/user/change_psw.php';
       break;
+    
+    // posts
+    case '/post/add':
+          require 'includes/post/add.php';
+          break;
+    case '/post/delete':
+          require 'includes/post/delete.php';
+          break;
+    case '/post/edit':
+          require 'includes/post/edit.php';
+          break;
 
     // pages
     case '/login':

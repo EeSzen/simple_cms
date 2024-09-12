@@ -4,17 +4,19 @@
         <h1 class="h1">Add New Post</h1>
       </div>
       <div class="card mb-2 p-4">
-        <form>
+      <?php require "parts/error.php"?>
+        <form action="/post/add" method="POST">
           <div class="mb-3">
-            <label for="post-title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="post-title" />
+            <label for="post-title" class="form-label" >Title</label>
+            <input type="text" class="form-control" id="post-title" name="title" />
           </div>
           <div class="mb-3">
-            <label for="post-content" class="form-label">Content</label>
+            <label for="post-content" class="form-label" >Content</label>
             <textarea
               class="form-control"
               id="post-content"
               rows="10"
+              name="content"
             ></textarea>
           </div>
           <div class="text-end">

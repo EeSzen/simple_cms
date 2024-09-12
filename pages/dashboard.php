@@ -7,7 +7,7 @@
 
 require 'parts/header.php';?>
 <div class="container mx-auto my-5" style="max-width: 800px;">
-      <h1 class="h1 mb-4 text-center">Dashboard</h1>
+      <h1 class="h1 mb-4 text-center"><?= $_SESSION["user"]["name"];?>'s Dashboard</h1>
       <div class="row">
         <div class="col">
           <div class="card mb-2">

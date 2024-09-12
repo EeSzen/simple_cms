@@ -42,7 +42,7 @@
         } else {
             // create the user account
             // sql command (recipe)
-            $sql = "INSERT INTO cms (`name`,`email`,`password`,`role`) VALUES (:name, :email, :password, :role)";
+            $sql = "INSERT INTO cms (`name`,`email`,`password`,`role`,`user_id`) VALUES (:name, :email, :password, :role, :user_id)";
             // prepare (put everything into the bowl)
             $query = $database->prepare( $sql );
             // execute (cook it)
@@ -50,7 +50,8 @@
                 'name' => $name,
                 'email' => $email,
                 'password' => password_hash( $password, PASSWORD_DEFAULT ),
-                'role' => $role
+                'role' => $role,
+                'user_id' => $_SESSION['user']['id']
             ]);
         
         // 5. redireact back to /manage-users page
