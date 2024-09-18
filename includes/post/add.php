@@ -19,7 +19,7 @@
     
     // check for empty fields
     if(empty( $title ) || empty( $content )){
-        // setError( "All the fields are required.", '/post_add' );
+        setError( "All the fields are required.", '/post_add' );
     }else{
         // create the post
             // sql command (recipe)

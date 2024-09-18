@@ -40,15 +40,26 @@ require 'parts/header.php';
           </div>
           <div class="mb-3">
             <label for="post-content" class="form-label">Content</label>
-            <textarea class="form-control" id="post-content" rows="10" name="content">
-            <?=$post['content'];?>            
+            <textarea class="form-control" id="post-content" rows="10" name="content"><?=$post
+            ['content'];?>            
             </textarea>
           </div>
           <div class="mb-3">
             <label for="post-content" class="form-label">Status</label>
-            <select class="form-control" id="post-status" name="status" value="<?=$post['status'];?>">
-              <option value="pending">Pending for Review</option>
-              <option value="publish">Publish</option>
+            <select class="form-control" id="post-status" name="status">
+
+            <?php if ( $post['status'] == 'publish' ) : ?>
+                <option value="publish" selected>Publish</option>
+              <?php else: ?>
+                <option value="publish">Publish</option>
+              <?php endif; ?>
+
+              <?php if ( $post['status'] == 'pending' ) : ?>
+                <option value="pending" selected>Pending Review</option>
+              <?php else: ?>
+                <option value="pending">Pending Review</option>
+              <?php endif; ?>
+              
             </select>
           </div>
           <div class="text-end">

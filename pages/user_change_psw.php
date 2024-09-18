@@ -1,4 +1,11 @@
 <?php
+
+  // check if user is logged in or not
+  checkIfuserIsNotLoggedIn();
+
+  // check if the user is admin or not
+  checkIfIsNotAdmin();
+
   //get the id from the URL /manage-users.edit?id=1
   $id = $_GET['id'];
 ?>
@@ -14,13 +21,14 @@
             <div class="row">
               <div class="col">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" />
+                <input type="password" class="form-control" name="password" id="password" />
               </div>
               <div class="col">
                 <label for="confirm-password" class="form-label"
                   >Confirm Password</label
                 >
                 <input
+                  name="confirm_password"
                   type="password"
                   class="form-control"
                   id="confirm-password"
